@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'task_manager_app',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# for accounts (custom User model)
+AUTH_USER_MODEL = 'accounts.CustomUser'
