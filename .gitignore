@@ -1,0 +1,49 @@
+# venv (Virtual Environment)
+venv/
+
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Django generated files
+*.pyo
+*.pyc
+*.pyd
+db.sqlite3
+
+# Static files (usually collected by Django)
+static/
+
+# Media files (usually uploaded by users)
+media/
+
+# Environment variable file (if using python-decouple or python-dotenv)
+.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# macOS
+.DS_Store
+
+# PyCharm files
+.idea/
+
+# VSCode files
+.vscode/
+
+# Editor-specific files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Docker Compose file
+docker-compose.yml
+
+# Project Structure file (if it's temporary or IDE-specific)
+ProjectStructure

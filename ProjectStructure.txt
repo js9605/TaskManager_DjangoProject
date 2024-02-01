@@ -1,0 +1,13 @@
+TaskManager_DjangoProject/
+|-- TaskManager/
+|   |-- TaskManager/
+|   |   |-- __pycache__
+|   |   |-- asgi.py
+|   |   |-- settings.py
+|   |   |-- urls.py
+|   |   |-- wsgi.py
+|   |-- db.sqlite3
+|   |-- manage.py
+|-- venv
+|-- .gitignore 
+|-- ProjectStructure
