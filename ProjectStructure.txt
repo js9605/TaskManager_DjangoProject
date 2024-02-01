@@ -1,5 +1,14 @@
 TaskManager_DjangoProject/
 |-- TaskManager/
+|   |-- accounts/
+|   |   |-- __pycache__
+|   |   |-- migrations
+|   |   |-- __init__.py
+|   |   |-- admin.py
+|   |   |-- apps.py
+|   |   |-- models.py
+|   |   |-- tests.py
+|   |   |-- views.py
 |   |-- task_manager_app/
 |   |   |-- __pycache__
 |   |   |-- migrations
@@ -10,6 +19,9 @@ TaskManager_DjangoProject/
 |   |   |-- tests.py
 |   |   |-- views.py
 |   |-- TaskManager/
+|   |   |-- templates/
+|   |   |   |-- register.html
+|   |   |   |-- base.html
 |   |   |-- __pycache__
 |   |   |-- asgi.py
 |   |   |-- settings.py
