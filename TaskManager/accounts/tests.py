@@ -1,3 +1,24 @@
 from django.test import TestCase
+from django.urls import reverse
+from django.contrib.auth import get_user_model
 
-# Create your tests here.
+class UserRegistrationTest(TestCase):
+    def test_user_registration_view(self):
+        url = reverse('register')
+        response = self.client.get(url)
+
+        self.assertTemplateUsed(response, 'register.html')
+        self.assertEqual(response.status_code, 200)
+
+        user_data = {
+            'username': 'testuser2',
+            'password1': 'testpassword2',
+            'password2': 'testpassword2',
+        }
+
+        response = self.client.post(url, data=user_data, follow=True)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'register.html')
+
+
