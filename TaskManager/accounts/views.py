@@ -32,9 +32,6 @@ def custom_login(request):
                 return redirect("home")
             else:
                 messages.error(request, "Invalid username or password.")
-                print("DEBUG: User authentication failed.")
-                print("DEBUG: Provided username:", username)
-                print("DEBUG: Provided password:", password)
         else:
             print("DEBUG: Form errors:", form.errors)
     else:
