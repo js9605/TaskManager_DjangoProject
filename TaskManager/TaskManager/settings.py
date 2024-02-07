@@ -55,8 +55,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'TaskManager.urls'
 
-print('log: ', os.path.join(BASE_DIR, 'TaskManager', 'templates'))
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -132,7 +130,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # for accounts (custom User model)
-AUTH_USER_MODEL = 'accounts.CustomUser'
+AUTH_USER_MODEL = 'auth.User'
 
 
 AUTHENTICATION_BACKENDS = [
