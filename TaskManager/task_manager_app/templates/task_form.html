@@ -1,0 +1,6 @@
+<h1>Create/Update Task</h1>
+<form method="post" action="{% if task.pk %}{% url 'task_edit' pk=task.pk %}{% else %}{% url 'task_create' %}{% endif %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
