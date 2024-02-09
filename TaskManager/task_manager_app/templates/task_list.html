@@ -1,0 +1,3 @@
+{% for task in tasks %}
+    <a href="{% url 'task_detail' pk=task.pk %}">{{ task.title }}</a><br>
+{% endfor %}

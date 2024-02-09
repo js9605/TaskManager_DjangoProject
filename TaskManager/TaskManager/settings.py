@@ -55,11 +55,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'TaskManager.urls'
 
+print(f"DEBUG templates dir: {os.path.join(BASE_DIR, 'TaskManager', 'TaskManager', 'templates')}")
+print(f"DEBUG templates2 dir: {os.path.join(BASE_DIR, 'task_manager_app', 'templates')}")
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'TaskManager', 'templates'),
+            os.path.join(BASE_DIR, 'task_manager_app', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
