@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Task List</h2>
+  <h1>Task List</h1>
+
   <ul>
     {% for task in tasks %}
-      <li>{{ task.title }}</li>
+      <li>
+        <a href="{% url 'task_detail' pk=task.pk %}">{{ task.title }}</a>
+        {% if task.description %}
+          <p style="margin-left: 1cm;">{{ task.description }}</p>
+        {% endif %}
+      </li>
     {% endfor %}
   </ul>
 {% endblock %}
