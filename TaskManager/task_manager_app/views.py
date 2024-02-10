@@ -3,8 +3,14 @@ from .models import Task
 from .forms import TaskForm
 
 def task_list(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.filter(user=request.user)
     return render(request, 'task_list.html', {'tasks': tasks})
+
+def dashboard(request):
+    pending_tasks = Task.objects.filter(user=request.user, status='todo').count()
+    completed_tasks = Task.objects.filter(user=request.user, status='done').count()
+    
+    return render(request, 'dashboard.html', {'pending_tasks': pending_tasks, 'completed_tasks': completed_tasks})
 
 def task_detail(request, pk):
     task = get_object_or_404(Task, pk=pk)
