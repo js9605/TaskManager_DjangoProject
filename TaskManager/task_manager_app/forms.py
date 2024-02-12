@@ -11,3 +11,13 @@ class TaskForm(forms.ModelForm):
         input_formats=['%Y-%m-%d'],
         help_text='Enter the due date in the format YYYY-MM-DD'
     )
+
+class UpdateTaskStatusForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = ['status']
+
+class TaskEditForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = ['title', 'description', 'due_date', 'status']

@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
+
 from .models import Task
-from .forms import TaskForm
+from .forms import TaskForm, UpdateTaskStatusForm, TaskEditForm
 
 def task_list(request):
     tasks = Task.objects.filter(user=request.user)
@@ -14,7 +15,34 @@ def dashboard(request):
 
 def task_detail(request, pk):
     task = get_object_or_404(Task, pk=pk)
-    return render(request, 'task_detail.html', {'task': task})
+    update_status_form = None
+
+    if request.method == 'POST':
+        if 'status' in request.POST:
+            update_status_form = UpdateTaskStatusForm(request.POST, instance=task)
+            if update_status_form.is_valid():
+                update_status_form.save()
+        elif 'delete_task' in request.POST:
+            task.delete()
+            return redirect('task_list')
+
+    else:
+        update_status_form = UpdateTaskStatusForm(instance=task)
+
+    return render(request, 'task_detail.html', {'task': task, 'update_task_status_form': update_status_form, 'task_id': task.id})
+
+def task_edit(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+
+    if request.method == 'POST':
+        form = TaskEditForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('task_detail', pk=task.id)  # Redirect to task detail
+    else:
+        form = TaskEditForm(instance=task)
+
+    return render(request, 'task_edit.html', {'form': form})
 
 def task_create(request):
     if request.method == 'POST':
