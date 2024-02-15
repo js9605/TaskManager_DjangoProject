@@ -40,3 +40,5 @@ TaskManager_DjangoProject/
 |-- venv
 |-- .gitignore 
 |-- ProjectStructure
+|-- Dockerfile
+|-- docker-compose.yml
