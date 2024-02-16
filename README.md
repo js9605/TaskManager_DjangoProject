@@ -25,7 +25,7 @@ Welcome to TaskManager, your go-to solution for efficient task management! TaskM
 - Personalized dashboard to view a summary of your tasks.
 - Monitor the number of tasks pending and completed.
 
-## Additional Features (Optional):
+## Additional Features:
 
 - Add priority levels to tasks for better organization.
 - Implement task categories or tags for advanced task sorting.
