@@ -1,17 +1,19 @@
 FROM python:3.11
 
+RUN apt-get update \
+    && apt-get install -y libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
 COPY . /app
 
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip \
+    && pip install -r requirements.txt
 
-# Make port 8000 available to the world outside this container
 EXPOSE 8000
 
-# Define environment variable
-ENV NAME World
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
-# Run app.py when the container launches
-CMD ["python", "TaskManager/manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["entrypoint.sh"]

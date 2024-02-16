@@ -41,4 +41,5 @@ TaskManager_DjangoProject/
 |-- .gitignore 
 |-- ProjectStructure
 |-- Dockerfile
+|-- entrypoint.sh
 |-- docker-compose.yml
